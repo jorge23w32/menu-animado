@@ -1,0 +1,84 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    width: 25rem  /* 400/16 */;
+    height: 25rem  /* 400/16 */;
+    background-color: #3faf82;
+    border-radius: 10%;
+    box-shadow: 0px -1px 23px 0px rgba(0,0,0,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu{
+    width: 80px;
+    height: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem  /* 14/16 */;
+}
+.raya-1, .raya-2, .raya-3{
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.75);
+}
+@keyframes deArribaAbajo {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(275%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(275%) rotate(45deg);
+    }
+}
+@keyframes deAbajoArriba {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-275%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-275%) rotate(-45deg);
+    }
+}
+
+@keyframes desaparecer {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes rotar {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(45deg);
+    }
+}
+.menu:hover .raya-1{
+    animation: deArribaAbajo 2s forwards;
+}
+.menu:hover .raya-3{
+    animation: deAbajoArriba 2s forwards;
+}
+.menu:hover .raya-2{
+    animation: desaparecer .01ms forwards;
+    animation-delay: 1s;
+}
+
+
+
